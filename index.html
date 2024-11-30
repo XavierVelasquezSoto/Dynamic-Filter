@@ -7,6 +7,30 @@
     <title>Document</title>
   </head>
   <body>
+    <header class="header-container">
+      <div class="filter">
+        <label for="amount-text">Name</label>
+        <input type="text" name="" id="amount-text" />
+      </div>
+      <div class="filter">
+        <label for="sugarless-checkbox">Sugarless</label>
+        <input type="checkbox" id="sugarless-checkbox" />
+      </div>
+      <select name="order-select" id="order-select" class="order-select">
+        <option value="default">Default</option>
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+      </select>
+    </header>
+    <div class="container">
+      <div id="products" class="products">
+        <!-- <img src="./assets/img/image-waffle.jpg" alt="" />
+        <h2 class="sugarlees-title">Waffle with Berries</h2>
+        <span class="sugarless-product">Sugarless</span>
+        <span class="sugarless-price">$6.50</span> -->
+      </div>
+      <h1 id="no-products">No Products</h1>
+    </div>
     <script src="./js/scripts.js"></script>
   </body>
 </html>
