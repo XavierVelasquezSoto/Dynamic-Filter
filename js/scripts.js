@@ -1,6 +1,8 @@
 const productsElement = document.getElementById("products");
 
-const amountTextElement = document.getElementById("amount-text");
+const amountTextElement = document.getElementById("amount-text"); // filter products
+
+const noProductsElement = document.getElementById("no-products");
 
 const sugarlessCheckboxElement = document.getElementById("sugarless-checkbox"); //checkbox products
 
@@ -63,11 +65,20 @@ const productsCart = [
   },
 ];
 
+const noProducts = (verifyProduct) => {
+  if (verifyProduct === 0) {
+    noProductsElement.classList.remove("hide");
+  } else {
+    noProductsElement.classList.add("hide");
+  }
+};
+
 const searchProduct = (product) => {
   const quantityProduct = productsCart.filter((nameProduct) => {
     return nameProduct.name.toLowerCase().includes(product.toLowerCase());
   });
   // console.log(quantityProduct);
+  noProducts(quantityProduct.length);
   newProducts(quantityProduct);
 };
 
