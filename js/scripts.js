@@ -139,7 +139,8 @@ const newProducts = (products) => {
 
     const newSugarlessProduct = document.createElement("span");
     newSugarlessProduct.classList.add("sugarless-product");
-    newSugarlessProduct.textContent = `${product.sugarless}`;
+    newSugarlessProduct.textContent = `${product.sugarless}`; //product.sugarless (consultar en que se diferencia)
+
     if (product.sugarless === true) {
       newSugarlessProduct.textContent = `Sugarless`;
     } else if (product.sugarless === false) {
