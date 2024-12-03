@@ -77,6 +77,10 @@ const searchProduct = (product) => {
   const quantityProduct = productsCart.filter((nameProduct) => {
     return nameProduct.name.toLowerCase().includes(product.toLowerCase());
   });
+  // const quantityProduct = productsCart.filter((nameProduct) =>
+  //   nameProduct.name.toLowerCase().includes(product)
+  // ); también es valido sin llaves y no se usaria "return"
+
   // console.log(quantityProduct);
   noProducts(quantityProduct.length);
   newProducts(quantityProduct);
@@ -139,7 +143,7 @@ const newProducts = (products) => {
 
     const newSugarlessProduct = document.createElement("span");
     newSugarlessProduct.classList.add("sugarless-product");
-    newSugarlessProduct.textContent = `${product.sugarless}`; //product.sugarless (consultar en que se diferencia)
+    //product.sugarless (consultar en que se diferencia)
 
     if (product.sugarless === true) {
       newSugarlessProduct.textContent = `Sugarless`;
@@ -149,7 +153,7 @@ const newProducts = (products) => {
 
     const newSugarlessPrice = document.createElement("span");
     newSugarlessPrice.classList.add("sugarless-price");
-    newSugarlessPrice.textContent = `$${product.price}`;
+    newSugarlessPrice.textContent = `$${product.price.toFixed(2)}`; //toFixed para añadir decimal
 
     newProduct.append(
       newImgProduct,
